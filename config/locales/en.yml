@@ -1,0 +1,19 @@
+# English strings go here for Rails i18n
+en:
+  my_label: "My label"
+  label_template: "Templates" 
+  label_template_new: "New Template"
+  label_template_title: "Name"
+  label_template_content: "Contents"
+  label_template_select: "Select"
+  label_wiki_blanco: "Without Template" 
+  label_choose_template: "Choose a template "
+  label_preview_plantillas: "This is a template's preview"
+  label_template_delete: "Template delete successfully"
+  label_template_successful_update: "Template update successfully"
+  permission_view_templates: "View Templates"
+  permission_delete_templates: "Delete Templates"
+  permission_create_templates: "Create Templates"
+  permission_edit_templates: "Edit Templates"
+  project_module_templates: "Templates"
+

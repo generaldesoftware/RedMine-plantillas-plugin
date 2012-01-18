@@ -1,0 +1,26 @@
+<table class="list">
+	<thead><tr>
+	<th><%= l(:label_template) %></th>
+	<th></th>
+	</tr></thead>
+	<tbody>
+<% for template in @templates %>
+	<% unless template.new_record? %>
+	<tr class="<%= cycle 'odd', 'even' %>">
+    <td><%=h(template.name) %></td>
+    <td class="buttons">
+    	<%= link_to_if_authorized l(:button_edit), { :controller => 'templates', :action => 'edit', :id => template , :project_id => @project_id}, :class => 'icon icon-edit' %>
+    	<%= link_to_if_authorized l(:button_delete), {:controller => 'templates', :action => 'destroy', :id => template, :project_id => @project_id}, :method => :post, :class => 'icon icon-del' %>
+    </td>
+	</tr>
+	<% end %>
+<% end %>
+    </tbody> 
+</table>
+
+<p><%= link_to_if_authorized l(:label_template_new),{ :controller => 'templates', :action => 'new', :project_id => @project_id }%></p>
+
+
+
+
+

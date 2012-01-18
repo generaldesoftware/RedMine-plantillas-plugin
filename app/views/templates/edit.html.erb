@@ -1,0 +1,11 @@
+<h2><%=@mitemplate.name%></h2>
+<div class="box">
+<% form_for :mitemplate, @mitemplate, :url => {:action => 'edit', 
+:project_id => @project_id }, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
+<%= f.hidden_field :author_id %>
+<%= f.text_area :text, :cols => 100, :rows => 25, :class => 'wiki-edit', :accesskey => accesskey(:edit) %>
+<%= wikitoolbar_for 'mitemplate_text' %></div>
+</div>
+<%= submit_tag l(:button_save) %>
+<% end %>
+

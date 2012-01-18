@@ -1,0 +1,11 @@
+<h2>Nueva Plantilla</h2>
+<div class="box">
+<% form_for :mitemplate, @mitemplate, :url => {:action => 'new', :project_id => @project_id}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
+<p><label><%= l(:label_template_title) %></label><br />
+<%= f.text_field :name, :size => 30, :required => true %></p>
+<p><label><%= l(:label_template_content) %></label><br />
+<%= f.text_area :text, :cols => 100, :rows => 25, :class => 'wiki-edit', :accesskey => accesskey(:edit) %></p>
+<%= wikitoolbar_for 'mitemplate_text' %></div>
+<%= submit_tag l(:button_create) %>
+<% end %>
+

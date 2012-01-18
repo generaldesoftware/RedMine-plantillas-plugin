@@ -1,0 +1,67 @@
+Plugin gsc_plantillas
+
+Description:
+ 
+--------------------------------------------------------------------------------
+
+
+This plugin allow you choose a wiki template when you add a new page.
+
+
+Developer:
+ 
+--------------------------------------------------------------------------------
+
+This plugin is developed by “General de Software” (www.gsc.es)
+
+Features:
+ 
+--------------------------------------------------------------------------------
+
+This plugin lets you choose a template when you add a new page.
+
+• You can see a preview of the template before you choose it
+
+• Configuration: You can add, edit and remove templates in the area of settings of your project
+ 
+• Multilanguage (english, spanish)
+ 
+
+
+How to use to edit, add and remove a template
+ 
+--------------------------------------------------------------------------------
+• Click in the project name to navigate to the project
+ 
+• Click in “Settings” to list the templates of the project
+ 
+• Configure your templates as you want: name and contents
+
+
+How to choose a template
+ --------------------------------------------------------------------------------
+
+• Add a new wiki 
+• Select a template from the set of options.
+• Click in "Preview" if you want
+• Click in "Select" to choose it
+ 
+
+Installation notes
+ 
+--------------------------------------------------------------------------------
+
+To install this plugin:
+ 1.
+Simple download it and extract its content into the Redmine plugin directory.
+ 
+2.
+IMPORTANT: Rename the folder to: redmine_gsc_plantillas.
+ 
+3.
+Now run rake db:migrate_plugins from the Redmine directory
+ 
+4.
+Restart server.
+
+
