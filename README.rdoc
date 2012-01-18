@@ -52,17 +52,11 @@ Installation notes
 --------------------------------------------------------------------------------
 
 To install this plugin:
- 1.
-Simple download it and extract its content into the Redmine plugin directory.
- 
-2.
-IMPORTANT: Rename the folder to: redmine_gsc_plantillas.
- 
-3.
-Now run rake db:migrate_plugins from the Redmine directory
- 
-4.
-Restart server.
+
+# Simple download it and extract its content into the Redmine plugin directory.
+# IMPORTANT: Rename the folder to: redmine_gsc_plantillas.
+# Now run rake db:migrate_plugins from the Redmine directory
+# Restart server.
 
 
  
