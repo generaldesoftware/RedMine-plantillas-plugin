@@ -65,3 +65,4 @@ Now run rake db:migrate_plugins from the Redmine directory
 Restart server.
 
 
+ 
