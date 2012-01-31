@@ -1,4 +1,4 @@
-<h2>Nueva Plantilla</h2>
+<h2><%= l(:label_template_new) %></h2>
 <div class="box">
 <% form_for :mitemplate, @mitemplate, :url => {:action => 'new', :project_id => @project_id}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
 <p><label><%= l(:label_template_title) %></label><br />
