@@ -1,0 +1,19 @@
+# German strings go here for Rails i18n
+de:
+  my_label: "Meine Bezeichnung"
+  label_template: "Vorlagen"
+  label_template_new: "Neue Vorlage"
+  label_template_title: "Title"
+  label_template_content: "Inhalt"
+  label_template_select: "Auswählen"
+  label_wiki_blanco: "Ohne Vorlage"
+  label_choose_template: "Vorlage auswählen "
+  label_preview_plantillas: "Vorlagen Vorschau"
+  label_template_delete: "Vorlage erfolgreich gelöscht"
+  label_template_successful_update: "Vorlage erfolgreich aktualisiert"
+  permission_view_templates: "Vorlagen ansehen"
+  permission_delete_templates: "Vorlagen löschen"
+  permission_create_templates: "Vorlagen erstellen"
+  permission_edit_templates: "Vorlagen bearbeiten"
+  project_module_templates: "Vorlagen"
+
