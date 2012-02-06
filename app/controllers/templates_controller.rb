@@ -39,6 +39,7 @@ class TemplatesController < ApplicationController
     #if User.current.allowed_to?(:edit_templates, @project) && request.post?
       @mitemplate = WikiTemplates.find(params[:id])
       @mitemplate.text = params[:mitemplate][:text]
+      @mitemplate.name = params[:mitemplate][:name]
       @mitemplate.project_id = @project_id
       @mitemplate.save
       flash[:notice] = l(:notice_successful_update)

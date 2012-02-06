@@ -11,6 +11,10 @@
 <% for template in @templates %>
 	<option value="<%=template.id%>" ><%=template.name%></option>
 <% end %>
+ <optgroup label='--<%= l(:label_global_sep_template) %>--' ></optgroup>
+<% for templateg in @templatesg %>
+	<option value="<%=templateg.id%>*" ><%=templateg.name%></option>
+<% end %>
 </select></p>
 
 </fieldset>

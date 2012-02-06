@@ -1,0 +1,23 @@
+<h2><%=l(:app_menu_global_templates)%></h2>
+<table class="list">
+	<thead><tr>
+	<th><%= l(:label_template) %></th>
+	<th></th>
+	</tr></thead>
+	<tbody>
+<% for template in @templates %>
+	<% unless template.new_record? %>
+	<tr class="<%= cycle 'odd', 'even' %>">
+    <td><%=h(template.name) %></td>
+    <td class="buttons">
+    	<%= link_to l(:button_edit), { :controller => 'templatesg', :action => 'edit', :id => template }, :class => 'icon icon-edit' %>
+    	<%= link_to l(:button_delete), {:controller => 'templatesg', :action => 'destroy', :id => template}, :method => :post, :class => 'icon icon-del' %>
+    </td>
+	</tr>
+	<% end %>
+<% end %>
+    </tbody> 
+</table>
+
+<p><%= link_to l(:label_template_new),{ :controller => 'templatesg', :action => 'new' }%></p>
+

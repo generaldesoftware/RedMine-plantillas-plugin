@@ -22,7 +22,12 @@ module WikiControllerPatch
 		   when '0'
 			@content.text = initial_page_content(@page) if @content.text.blank? 
 		   else
-			miwiki = WikiTemplates.find(select_elige_plantilla)
+			if select_elige_plantilla.to_s.index('*')
+				id_template_chosen = select_elige_plantilla[0,select_elige_plantilla.length-1]
+				miwiki = WikiTemplatesg.find(id_template_chosen)
+			else
+				miwiki = WikiTemplates.find(select_elige_plantilla)
+			end
 			@content.text = miwiki.text
 	         end	
 		    # don't keep previous comment
@@ -40,6 +45,7 @@ module WikiControllerPatch
 		      if User.current.allowed_to?(:edit_wiki_pages, @project) && editable?
 			#edit
 			@templates = WikiTemplates.find(:all,:conditions => ["project_id = ? " , @project_id ])
+			@templatesg = WikiTemplatesg.find(:all)
 			render 'eligeplantilla'
 		      else
 			render_404
@@ -66,14 +72,21 @@ module WikiControllerPatch
 		    render :action => 'show'
 		end
 
+
 	  def preview_with_template
 	  # If the user choose a template he will see the preview of it
 	  if params[:issue_plantilla]
 	  	select_elige_plantilla = params[:issue_plantilla]
 		if select_elige_plantilla!='0' 
-			ptemplate = WikiTemplates.find(select_elige_plantilla)
-			@text = ptemplate.text
-                else
+			if select_elige_plantilla.to_s.index('*')
+				id_template_chosen = select_elige_plantilla[0,select_elige_plantilla.length-1]
+				ptemplate = WikiTemplatesg.find(id_template_chosen)
+				@text = ptemplate.text
+			else
+				ptemplate = WikiTemplates.find(select_elige_plantilla)
+				@text = ptemplate.text
+			end
+		else
 			@text = ''
 		end
 	  # If the user doesn't choose a template he will see the preview of a page

@@ -11,10 +11,12 @@ es:
   label_preview_plantillas: "Esta es la vista previa de las plantillas"
   label_template_delete: "Plantilla eliminada correctamente"
   label_template_successful_update: "Plantilla actualizada correctamente"
+  label_global_sep_template: "Global"
   permission_view_templates: "Ver Plantillas"
   permission_delete_templates: "Borrar Plantillas"
   permission_create_templates: "Crear Plantillas"
   permission_edit_templates: "Editar Plantillas"
   project_module_templates: "Plantillas"
+  app_menu_global_templates: "Plantillas Globales"
 
 

@@ -22,9 +22,14 @@ This plugin lets you choose a template when you add a new page.
 
 • You can see a preview of the template before you choose it
 
-• Configuration: You can add, edit and remove templates in the area of settings of your project
+• Configuration: 
+
+	• For templates in your project you can add, edit and remove templates in the settings area of your project
+
+	• For global templates you can add, edit and remove templates in administration area
+	
  
-• Multilanguage (english, spanish)
+• Multilanguage (english, spanish, russian, german)
  
 
 
@@ -52,11 +57,16 @@ Installation notes
 --------------------------------------------------------------------------------
 
 To install this plugin:
-
-1. Simple download it and extract its content into the Redmine plugin directory.
-2. IMPORTANT: Rename the folder to: redmine_gsc_plantillas.
-3. Now run rake db:migrate_plugins from the Redmine directory
-4. Restart server.
-
-
+ 1.
+Simple download it and extract its content into the Redmine plugin directory.
  
+2.
+IMPORTANT: Rename the folder to: redmine_gsc_plantillas.
+ 
+3.
+Now run rake db:migrate_plugins from the Redmine directory
+ 
+4.
+Restart server.
+
+

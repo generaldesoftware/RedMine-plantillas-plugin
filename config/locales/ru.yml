@@ -1,0 +1,21 @@
+# Russian strings go here for Rails i18n
+ru:
+  my_label: "Мой ярлык"
+  label_template: "Шаблоны" 
+  label_template_new: "Новый Шаблон"
+  label_template_title: "Имя"
+  label_template_content: "Содержание"
+  label_template_select: "Выбрать"
+  label_wiki_blanco: "Без шаблона" 
+  label_choose_template: "Выберите шаблон "
+  label_preview_plantillas: "Предварительный просмотрт шаблона"
+  label_template_delete: "Шаблон удачно удалён"
+  label_template_successful_update: "Шаблон удачно обновлён"
+  label_global_sep_template: "Глобальный"
+  permission_view_templates: "Просмотреть Шаблон"
+  permission_delete_templates: "Удалить Шаблон"
+  permission_create_templates: "Создать Шаблон"
+  permission_edit_templates: "Редактировать Шаблоны"
+  project_module_templates: "Шаблоны"
+  app_menu_global_templates: "Глобальные шаблоны"
+
