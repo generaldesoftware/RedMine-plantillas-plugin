@@ -40,12 +40,28 @@ module WikiControllerPatch
 
 	  # display a page (in editing mode if it doesn't exist)
 	  def show_with_template
+	    myfamily = []
 	    @project_id = @project.id
  		if @page.new_record?
 		      if User.current.allowed_to?(:edit_wiki_pages, @project) && editable?
 			#edit
 			@templates = WikiTemplates.find(:all,:conditions => ["project_id = ? " , @project_id ])
 			@templatesg = WikiTemplatesg.find(:all)
+			@miproject = Project.find(params[:project_id])
+			mychildrentree = Mychildtree.new
+                        mychildrentree.parent = @miproject.parent_id
+			@templatesg = WikiTemplatesg.find(:all)
+			@myfamily = mychildrentree.parentage
+			listprojects_id = ''
+		        for i in 0..@myfamily.length-1
+     				listprojects_id += @myfamily[i].to_s + ' , '
+		        end
+			if listprojects_id
+				listprojects_id = listprojects_id[0,listprojects_id.length-2]
+			end
+			if listprojects_id
+				@templatesf = WikiTemplates.find(:all,:conditions => "project_id in (" + listprojects_id + ") and visible_children is true ")
+			end
 			render 'eligeplantilla'
 		      else
 			render_404

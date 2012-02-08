@@ -5,6 +5,8 @@
 <%= f.text_field :name, :size => 30, :required => true %></p>
 <p><label><%= l(:label_template_content) %></label><br />
 <%= f.text_area :text, :cols => 100, :rows => 25, :class => 'wiki-edit', :accesskey => accesskey(:edit) %></p>
+<p><%= f.check_box :visible_children %>
+<label><%= l(:label_visible_children) %></label><br /></p>
 <%= wikitoolbar_for 'mitemplate_text' %></div>
 <%= submit_tag l(:button_create) %>
 <% end %>

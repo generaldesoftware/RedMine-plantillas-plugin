@@ -5,6 +5,9 @@
 <%= f.hidden_field :author_id %>
 <%= f.text_field :name, :size => 30, :required => true %></p>
 <%= f.text_area :text, :cols => 100, :rows => 25, :class => 'wiki-edit', :accesskey => accesskey(:edit) %>
+<p><%= f.check_box :visible_children %>
+<label><%= l(:label_visible_children) %>
+</label><br /></p>
 <%= wikitoolbar_for 'mitemplate_text' %></div>
 </div>
 <%= submit_tag l(:button_save) %>

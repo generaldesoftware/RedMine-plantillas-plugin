@@ -2,13 +2,18 @@
 	<thead><tr>
 	<th><%= l(:label_template) %></th>
 	<th></th>
+<th></th>
 	</tr></thead>
 	<tbody>
 <% for template in @templates %>
 	<% unless template.new_record? %>
 	<tr class="<%= cycle 'odd', 'even' %>">
-    <td><%=h(template.name) %></td>
-    <td class="buttons">
+    <td><%=h(template.name) %></td><td>
+    <%if template.visible_children == true %>
+	<%= l(:label_visible_child) %></th>
+	<% end %>
+</td>
+     <td class="buttons">
     	<%= link_to_if_authorized l(:button_edit), { :controller => 'templates', :action => 'edit', :id => template , :project_id => @project_id}, :class => 'icon icon-edit' %>
     	<%= link_to_if_authorized l(:button_delete), {:controller => 'templates', :action => 'destroy', :id => template, :project_id => @project_id}, :method => :post, :class => 'icon icon-del' %>
     </td>

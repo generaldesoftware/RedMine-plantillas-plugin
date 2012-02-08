@@ -18,5 +18,7 @@ es:
   permission_edit_templates: "Editar Plantillas"
   project_module_templates: "Plantillas"
   app_menu_global_templates: "Plantillas Globales"
-
+  label_visible_children: "Visible proyectos hijo" 
+  label_visible_child: "Visible hijos" 
+  label_parent_templates: "Plantillas padre"
 

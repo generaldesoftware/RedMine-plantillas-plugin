@@ -28,8 +28,10 @@ This plugin lets you choose a template when you add a new page.
 
 	• For global templates you can add, edit and remove templates in administration area
 	
+	• For parent templates you want to use in project child you must check it in the edit mode o when you create a new template.
+	
  
-• Multilanguage (english, spanish, russian, german)
+• Multilanguage (english, spanish, russian, german, bugarian, chinese and catalan)
  
 
 

@@ -18,3 +18,6 @@ de:
   permission_edit_templates: "Vorlagen bearbeiten"
   project_module_templates: "Vorlagen"
   app_menu_global_templates: "Globale Templates"
+  label_visible_children: "Sichtbare Kind proyects" 
+  label_visible_child: "Sichtbare Kind" 
+  label_parent_templates: "Eltern-Vorlagen"

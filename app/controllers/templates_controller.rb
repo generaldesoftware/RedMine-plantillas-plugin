@@ -16,6 +16,7 @@ class TemplatesController < ApplicationController
       @mitemplate = WikiTemplates.new
       @mitemplate.text = params[:mitemplate][:text]
       @mitemplate.name = params[:mitemplate][:name]
+      @mitemplate.visible_children = params[:mitemplate][:visible_children]
       @mitemplate.project_id = @project_id
       @mitemplate.author_id = User.current
       @mitemplate.save
@@ -40,6 +41,7 @@ class TemplatesController < ApplicationController
       @mitemplate = WikiTemplates.find(params[:id])
       @mitemplate.text = params[:mitemplate][:text]
       @mitemplate.name = params[:mitemplate][:name]
+      @mitemplate.visible_children = params[:mitemplate][:visible_children]
       @mitemplate.project_id = @project_id
       @mitemplate.save
       flash[:notice] = l(:notice_successful_update)

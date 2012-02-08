@@ -18,4 +18,7 @@ en:
   permission_edit_templates: "Edit Templates"
   project_module_templates: "Templates"
   app_menu_global_templates: "Global Templates"
+  label_visible_children: "Visible child projects" 
+  label_visible_child: "Visible child" 
+  label_parent_templates: "Parent templates"
 
