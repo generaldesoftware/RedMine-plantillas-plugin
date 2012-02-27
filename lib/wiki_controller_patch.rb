@@ -40,11 +40,9 @@ module WikiControllerPatch
 
 	  # display a page (in editing mode if it doesn't exist)
 	  def show_with_template
-	    myfamily = []
 	    @project_id = @project.id
  		if @page.new_record?
 		      if User.current.allowed_to?(:edit_wiki_pages, @project) && editable?
-			#edit
 			@templates = WikiTemplates.find(:all,:conditions => ["project_id = ? " , @project_id ])
 			@templatesg = WikiTemplatesg.find(:all)
 			@miproject = Project.find(params[:project_id])
@@ -62,7 +60,17 @@ module WikiControllerPatch
 			if listprojects_id
 				@templatesf = WikiTemplates.find(:all,:conditions => "project_id in (" + listprojects_id + ") and visible_children is true ")
 			end
-			render 'eligeplantilla'
+			sql = "SELECT id "
+			sql << " FROM #{Project.table_name} j "
+			sql << " WHERE"
+			sql << " j.id = " + @miproject.id.to_s + " and j.id IN (SELECT em.project_id FROM #{EnabledModule.table_name} em WHERE em.name='Templates') "
+			project_enable = ActiveRecord::Base.connection.select_all(sql)
+			@miproject_is_enable = project_enable[0]
+			if @miproject_is_enable
+				render 'eligeplantilla'
+			else 
+				render 'edit'
+			end
 		      else
 			render_404
 		      end
