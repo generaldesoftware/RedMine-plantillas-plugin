@@ -52,13 +52,13 @@ module WikiControllerPatch
 			@myfamily = mychildrentree.parentage
 			listprojects_id = ''
 		        for i in 0..@myfamily.length-1
-     				listprojects_id += @myfamily[i].to_s + ' , '
+     				listprojects_id += @myfamily[i].to_s + ','
 		        end
 			if listprojects_id
 				listprojects_id = listprojects_id[0,listprojects_id.length-2]
 			end
 			if listprojects_id
-				@templatesf = WikiTemplates.find(:all,:conditions => "project_id in (" + listprojects_id + ") and visible_children is true ")
+				    @templatesf = WikiTemplates.find(:all,:conditions => {:project_id => [listprojects_id], :visible_children => true}) 
 			end
 			sql = "SELECT id "
 			sql << " FROM #{Project.table_name} j "
