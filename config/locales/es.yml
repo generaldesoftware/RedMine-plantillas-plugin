@@ -20,5 +20,6 @@ es:
   app_menu_global_templates: "Plantillas Globales"
   label_visible_children: "Visible proyectos hijo" 
   label_visible_child: "Visible hijos" 
+  field_visible_children: "Visible proyectos hijo"  
   label_parent_templates: "Plantillas padre"
 

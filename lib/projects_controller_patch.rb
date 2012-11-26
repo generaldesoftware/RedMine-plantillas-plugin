@@ -11,9 +11,7 @@ module InstanceMethods
     @issue_category ||= IssueCategory.new
     @member ||= @project.members.new
     @trackers = Tracker.all
-    @repository ||= @project.repository
     @wiki ||= @project.wiki
-    @template ||= @project.template
     @project_id = @project.id
     @templates = WikiTemplates.find(:all,:conditions => ["project_id = ? " , @project_id ])
   end

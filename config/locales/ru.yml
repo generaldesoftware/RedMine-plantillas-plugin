@@ -17,8 +17,9 @@ ru:
   permission_create_templates: "Создать Шаблон"
   permission_edit_templates: "Редактировать Шаблоны"
   project_module_templates: "Шаблоны"
-  app_menu_global_templates: "Глобальные шаблоны"
-  label_visible_children: "Видимые проекты наследники" 
-  label_visible_child: "Видимые наследники" 
-  label_parent_templates: "Родительские шаблоны"
+  app_menu_global_templates: "Глобальные шаблоны"  
+  label_visible_children: "Visible child proyects" 
+  label_visible_child: "Visible child" 
+  label_parent_templates: "Parent templates"
+
 

@@ -1,14 +1,13 @@
 <h2><%= l(:label_template_new) %></h2>
-<div class="box">
-<% form_for :mitemplate, @mitemplate, :url => {:action => 'new', :project_id => @project_id}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
-<p><label><%= l(:label_template_title) %></label><br />
+
+<%= labelled_form_for  @mitemplate, :as => :mitemplate , :url => {:action => 'new',:project_id => @project_id}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
+<div class="box tabular">
+<p>
 <%= f.text_field :name, :size => 30, :required => true %></p>
-<p><label><%= l(:label_template_content) %></label><br />
+<p>
 <%= f.text_area :text, :cols => 100, :rows => 25, :class => 'wiki-edit', :accesskey => accesskey(:edit) %></p>
-<p><%= f.check_box :visible_children %>
-<label><%= l(:label_visible_children) %></label><br /></p>
+<p><%= f.check_box :visible_children %></p>
 <%= wikitoolbar_for 'mitemplate_text' %></div>
 <%= submit_tag l(:button_create) %>
 <% end %>
-
 

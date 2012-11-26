@@ -1,20 +1,34 @@
 require 'redmine'
-require 'dispatcher'
 
-Dispatcher.to_prepare :redmine_gsc_plantillas do
-  require_dependency 'wiki_controller'
-  WikiController.send(:include, WikiControllerPatch)
-  require_dependency 'projects_helper'
-  ProjectsHelper.send(:include, ProjectsHelperPatch)
-  require_dependency 'projects_controller'
-  ProjectsController.send(:include, ProjectsControllerPatch)
+# Including dispatcher.rb in case of Rails 2.x
+require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
+
+if Rails::VERSION::MAJOR >= 3
+	ActionDispatch::Callbacks.to_prepare do
+		# use require_dependency if you plan to utilize development mode
+		require_dependency 'wiki_controller'
+	  WikiController.send(:include, WikiControllerPatch)
+	  require_dependency 'projects_helper'
+	  ProjectsHelper.send(:include, ProjectsHelperPatch)
+	  require_dependency 'projects_controller'
+	  ProjectsController.send(:include, ProjectsControllerPatch)
+	end
+else
+	Dispatcher.to_prepare :redmine_gsc_plantillas do
+	  require_dependency 'wiki_controller'
+	  WikiController.send(:include, WikiControllerPatch)
+	  require_dependency 'projects_helper'
+	  ProjectsHelper.send(:include, ProjectsHelperPatch)
+	  require_dependency 'projects_controller'
+	  ProjectsController.send(:include, ProjectsControllerPatch)
+	end
 end
 
 Redmine::Plugin.register :redmine_gsc_plantillas do
   name 'Redmine Gsc Plantillas plugin'
-  author 'Marta González de Chaves Aguilera'
+  author 'Marta Gonzalez de Chaves Aguilera'
   description 'This is a plugin for Redmine. Show a template when you add a new page'
-  version '0.0.7'
+  version '0.1.0'
   url 'http://www.gsc.es'
   author_url 'http://www.gsc.es'
   project_module :templates do

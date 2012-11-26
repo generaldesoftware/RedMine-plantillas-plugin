@@ -13,6 +13,7 @@ Developer:
 --------------------------------------------------------------------------------
 
 This plugin is developed by “General de Software” (www.gsc.es)
+By Marta González de Chaves Aguilera
 
 Features:
  

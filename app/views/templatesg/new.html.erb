@@ -1,6 +1,6 @@
 <h2><%= l(:label_template_new) %></h2>
 <div class="box">
-<% form_for :mitemplate, @mitemplate, :url => {:action => 'new'}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
+<%= labelled_form_for :mitemplate , @mitemplate, :url => {:action => 'new'}, :html => {:method => :post, :multipart => false, :id => 'template_form'} do |f| %>
 <p><label><%= l(:label_template_title) %></label><br />
 <%= f.text_field :name, :size => 30, :required => true %></p>
 <p><label><%= l(:label_template_content) %></label><br />
