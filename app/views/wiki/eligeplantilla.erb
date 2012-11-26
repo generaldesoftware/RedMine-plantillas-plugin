@@ -1,0 +1,43 @@
+<%= wiki_page_breadcrumb(@page) %>
+
+<h2><%=h @page.pretty_title %></h2>
+
+<%= labelled_form_for @template, :as => :template,:url => {:action => 'edit', :action => 'edit', :project_id => @project_id, :id => @page.title}, :html => {:method => :get, :multipart => false, 
+:id => 'wiki_form'}  do |f| %>
+<%= error_messages_for 'content' %>
+
+<div class="box tabular">
+<p><label for="issue_plantilla"><%= l(:label_choose_template) %></label>
+<select id="issue_plantilla" name="issue_plantilla">
+	<option value="0" selected="selected"><%=l(:label_wiki_blanco)%></option>
+<% for template in @templates %>
+	<option value="<%=template.id%>" ><%=template.name%></option>
+<% end %>
+ <optgroup label='--<%= l(:label_global_sep_template) %>--' ></optgroup>
+<% for templateg in @templatesg %>
+	<option value="<%=templateg.id%>*" ><%=templateg.name%></option>
+<% end %>
+
+<% if @templatesf %>
+ <optgroup label='--<%= l(:label_parent_templates) %>--'></optgroup>
+	<% for templatef in @templatesf %>
+		<option value="<%=templatef.id%>" ><%=templatef.name%></option>
+	<% end %>
+<% end %>
+</select></p>
+</div>
+<br>
+<div id="preview" class="wiki"></div>
+<p><%= submit_tag l(:label_template_select) %>
+     <%= preview_link({:controller => 'wiki', :action => 'preview', :project_id => @project, :id => @page.title }, 'wiki_form') %></p>
+<%= wikitoolbar_for 'content_text' %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'scm' %>
+  <%= robot_exclusion_tag %>
+<% end %>
+
+
+
+<% html_title @page.pretty_title %>
